@@ -14,9 +14,8 @@
 3. [Configuration](#configuration)
 4. [Features](#features)
 5. [Dependencies](#dependencies)
-6. [Examples](#examples)
-7. [Troubleshooting](#troubleshooting)
-8. [Contributors](#contributors)
+6. [Troubleshooting](#troubleshooting)
+7. [Contributors](#contributors)
 
 ---
 
@@ -86,10 +85,6 @@
 
 ---
 
-## Examples
-
-* To test endpoints, use `AzureAdTest.http` with a REST client (e.g., **Visual Studio Code REST Client extension** or **Postman**).
-* Extend `WeatherForecastController` to secure APIs with SSO authentication.
 
 ---
 
