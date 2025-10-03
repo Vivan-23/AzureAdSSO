@@ -1,112 +1,110 @@
-AzureAdSSO
-Introduction
 
-AzureAdSSO demonstrates how to establish Single Sign-On (SSO) using SAML with Azure Active Directory (Azure AD). This project is built with C# (.NET) and provides a reference for integrating enterprise authentication into web applications.
+# AzureAdSSO
 
-Table of Contents
+## Introduction
 
-Installation
+**AzureAdSSO** demonstrates how to establish **Single Sign-On (SSO)** using **SAML** with **Azure Active Directory (Azure AD)**. This project is built with **C# (.NET)** and provides a reference for integrating enterprise authentication into web applications.
 
-Usage
+---
 
-Configuration
+## Table of Contents
 
-Features
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Configuration](#configuration)
+4. [Features](#features)
+5. [Dependencies](#dependencies)
+6. [Examples](#examples)
+7. [Troubleshooting](#troubleshooting)
+8. [Contributors](#contributors)
+9. [License](#license)
 
-Dependencies
+---
 
-Examples
+## Installation
 
-Troubleshooting
+1. Clone the repository:
 
-Contributors
+   ```bash
+   git clone https://github.com/Vivan-23/AzureAdSSO.git
+   cd AzureAdSSO
+   ```
+2. Open the solution file in **Visual Studio**:
 
-License
+   ```bash
+   AzureAdTest.sln
+   ```
+3. Restore dependencies:
 
-Installation
+   ```bash
+   dotnet restore
+   ```
+4. Build and run the project:
 
-Clone the repository:
+   ```bash
+   dotnet run
+   ```
 
-git clone https://github.com/Vivan-23/AzureAdSSO.git
-cd AzureAdSSO
+---
 
+## Usage
 
-Open the solution file in Visual Studio:
+* The application demonstrates how to connect to Azure AD via **SAML authentication**.
+* Launch the project and navigate to the configured endpoint to test the SSO login flow.
+* Use the provided controllers (in `Controllers/`) and constants (in `ApplicationSamlConstants.cs`) to extend the authentication logic.
 
-AzureAdTest.sln
+---
 
+## Configuration
 
-Restore dependencies:
+1. Update **`appsettings.json`** with your Azure AD details:
 
-dotnet restore
+   * **Entity ID**
+   * **SAML Metadata URL**
+   * **Reply URL (Assertion Consumer Service URL)**
+   * **Client ID / Tenant ID** (if required)
 
+2. Ensure your application is registered in the **Azure AD App Registrations** portal.
 
-Build and run the project:
+3. Configure **SAML-based Single Sign-On** for the registered app in Azure AD.
 
-dotnet run
+---
 
-Usage
+## Features
 
-The application demonstrates how to connect to Azure AD via SAML authentication.
+* SSO integration using **Azure AD + SAML**.
+* Configurable via `appsettings.json`.
+* Example controllers and test HTTP requests (`AzureAdTest.http`).
+* Works with **ASP.NET Core**.
 
-Launch the project and navigate to the configured endpoint to test the SSO login flow.
+---
 
-Use the provided controllers (in Controllers/) and constants (in ApplicationSamlConstants.cs) to extend the authentication logic.
+## Dependencies
 
-Configuration
+* **.NET Core / .NET 6+**
+* **Microsoft Identity Platform** (Azure AD)
+* SAML authentication libraries (native/custom implementation in repo)
 
-Update appsettings.json with your Azure AD details:
+---
 
-Entity ID
+## Examples
 
-SAML Metadata URL
+* To test endpoints, use `AzureAdTest.http` with a REST client (e.g., **Visual Studio Code REST Client extension** or **Postman**).
+* Extend `WeatherForecastController` to secure APIs with SSO authentication.
 
-Reply URL (Assertion Consumer Service URL)
+---
 
-Client ID / Tenant ID (if required)
+## Troubleshooting
 
-Ensure your application is registered in the Azure AD App Registrations portal.
+* Ensure Azure AD metadata URL is correct.
+* Verify **Reply URL** in Azure AD matches the one configured in `appsettings.json`.
+* If login fails, check logs in **Visual Studio Output** or console.
+* Confirm the application is using **HTTPS**, as Azure AD requires secure endpoints.
 
-Configure SAML-based Single Sign-On for the registered app in Azure AD.
+---
 
-Features
+## Contributors
 
-SSO integration using Azure AD + SAML.
+* [Vivan-23](https://github.com/Vivan-23)
 
-Configurable via appsettings.json.
-
-Example controllers and test HTTP requests (AzureAdTest.http).
-
-Works with ASP.NET Core.
-
-Dependencies
-
-.NET Core / .NET 6+
-
-Microsoft Identity Platform (Azure AD)
-
-SAML authentication libraries (native/custom implementation in repo)
-
-Examples
-
-To test endpoints, use AzureAdTest.http with a REST client (e.g., Visual Studio Code REST Client extension or Postman).
-
-Extend WeatherForecastController to secure APIs with SSO authentication.
-
-Troubleshooting
-
-Ensure Azure AD metadata URL is correct.
-
-Verify Reply URL in Azure AD matches the one configured in appsettings.json.
-
-If login fails, check logs in Visual Studio Output or console.
-
-Confirm the application is using HTTPS, as Azure AD requires secure endpoints.
-
-Contributors
-
-Vivan-23
-
-License
-
-This project does not specify a license yet. If you plan to share it publicly, consider adding an open-source license (e.g., MIT, Apache 2.0).
+---
