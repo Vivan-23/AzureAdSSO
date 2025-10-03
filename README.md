@@ -17,7 +17,6 @@
 6. [Examples](#examples)
 7. [Troubleshooting](#troubleshooting)
 8. [Contributors](#contributors)
-9. [License](#license)
 
 ---
 
